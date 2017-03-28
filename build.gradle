@@ -21,6 +21,7 @@ apply plugin: 'java'
 apply plugin: 'spring-boot'
 apply plugin: "io.spring.dependency-management"
 apply plugin: 'findbugs'
+apply plugin: 'jacoco'
 
 apply from: 'build-quality.gradle'
 apply from: 'https://raw.githubusercontent.com/reportportal/gradle-scripts/master/build-info.gradle'
@@ -56,3 +57,8 @@ dependencies {
 
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
